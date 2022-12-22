@@ -2,5 +2,6 @@ import React from "react";
 
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
-//
+const initialState = {
+  header: { showSearch: false },
+};
