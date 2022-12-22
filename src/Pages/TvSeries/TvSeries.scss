@@ -1,0 +1,37 @@
+.Tvseriescontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.tv_heading {
+  padding-top: 30px;
+  padding-left: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-container1 {
+  margin-right: 25px;
+}
+
+@media (max-width: 835px) {
+  .filter-container1 {
+    margin-right: 5px;
+  }
+  .tv_heading {
+    padding-left: 5px;
+  }
+
+  .Tvseriescontainer {
+    padding-top: 20px;
+  }
+  .thead-size {
+    font-size: 20px;
+  }
+}

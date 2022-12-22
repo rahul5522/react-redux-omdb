@@ -1,0 +1,36 @@
+@import "../../common/Color.scss";
+
+.movie-list,
+.show-list {
+  margin: 10px 0px;
+  color: white;
+  padding-top: 10px;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 80px;
+  justify-content: center;
+}
+
+.title_heading {
+  // padding-left: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 835px) {
+  .title_heading {
+    // padding-left: 0px;
+    font-size: 15px;
+  }
+
+  .movie-list,
+  .show-list {
+    margin: 20px 0px;
+    color: white;
+    padding-top: 0px;
+  }
+}

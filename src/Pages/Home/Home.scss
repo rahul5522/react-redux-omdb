@@ -1,0 +1,50 @@
+@import "../../common/Color.scss";
+
+.pagi_container {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.page-item {
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.page-item:hover {
+  background: $secondary-color;
+}
+
+.break-item {
+  color: white;
+}
+
+.active {
+  background: white;
+  color: black;
+}
+.active:hover {
+  background: white;
+  color: black;
+}
+
+.navi-item {
+  display: none;
+}
+
+.page-link {
+  padding: 1em;
+  margin: -1em;
+}

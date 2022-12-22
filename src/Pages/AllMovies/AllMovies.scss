@@ -1,0 +1,58 @@
+@import "../../common/Color.scss";
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.all-moviecontainer {
+  padding-top: 30px;
+  color: white;
+}
+
+.heading {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown {
+  color: red;
+}
+
+.filter-container {
+  margin-right: 25px;
+}
+
+.option:hover {
+  background-color: $primary-color !important;
+  color: white;
+}
+
+@media (max-width: 834px) {
+  .movie-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .heading {
+    margin-left: 5px;
+  }
+
+  .filter-container {
+    margin-right: 5px;
+  }
+  .head-size {
+    font-size: 20px;
+  }
+}

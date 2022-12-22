@@ -1,0 +1,160 @@
+@import "../../common/Color.scss";
+
+.item-detail {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  padding-top: 30px;
+  gap: 50px;
+  margin-left: 50px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 70%;
+}
+
+.sub-info {
+  margin-top: 30px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.overview {
+  margin-top: 50px;
+  padding-left: 5px;
+  // width: 80%;
+}
+
+.poster {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  width: 30%;
+  margin-bottom: 30px;
+}
+
+.poster_img {
+  width: 95%;
+  box-shadow: 0px 0px 5px black;
+  border-radius: 10px;
+}
+
+.carousel-container {
+  margin-top: 50px;
+}
+
+.watch-button {
+  margin-bottom: 50px;
+}
+
+.button-40 {
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6b7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.button-40:hover {
+  background-color: $secondary-color;
+  color: white;
+}
+
+.button-40:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-40 {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.landscape-img {
+  display: none;
+}
+
+.extraInfo {
+  display: none;
+}
+
+//For small screen media query
+
+@media (max-width: 835px) {
+  .item-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 0px;
+  }
+
+  .poster_img {
+    display: none;
+  }
+
+  .poster {
+    width: 100%;
+  }
+
+  .landscape-img {
+    display: block;
+    width: 100%;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+  }
+
+  .info {
+    width: 100%;
+    align-items: center;
+  }
+
+  .sub-info {
+    gap: 6px;
+  }
+
+  .alice-carousel {
+    margin-top: 10px !important;
+  }
+
+  .watch-button {
+    padding-bottom: 20px;
+  }
+
+  .episode-info {
+    display: none;
+  }
+
+  .title {
+    font-size: 10px;
+  }
+
+  .extraInfo {
+    display: block;
+  }
+}
