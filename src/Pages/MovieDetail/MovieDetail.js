@@ -7,11 +7,14 @@ import clock from "../../Common/Assets/image/clock.png";
 import rating from "../../Common/Assets/image/rating.png";
 import thumb from "../../Common/Assets/image/thumb.png";
 import CreditCarousel from "../../Components/CreditCarousel/CreditCarousel";
+import { useDispatch } from "react-redux";
+import { toggle } from "../../Features/Search/searchSlice";
 
-export default function MovieDetail({ setShowSearch }) {
+export default function MovieDetail() {
   const { imdbID, type } = useParams();
   const [data, setData] = useState();
   const [video, setVideo] = useState();
+  const Dispatch = useDispatch();
 
   const img = "https://www.themoviedb.org/t/p/w500/";
   console.log(imdbID, type);
@@ -47,7 +50,7 @@ export default function MovieDetail({ setShowSearch }) {
 
   useEffect(() => {
     document.documentElement.style.overflow = "scroll";
-    setShowSearch(false);
+    Dispatch(toggle(false));
     getData();
     getVideo();
   }, [imdbID]);

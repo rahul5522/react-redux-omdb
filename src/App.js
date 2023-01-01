@@ -11,59 +11,24 @@ import { TvSeries } from "./Pages/TvSeries/TvSeries";
 import Search from "./Components/Search/Search";
 
 function App() {
-  const [showSearch, setShowSearch] = useState(false);
-  const [tab1, setTab1] = useState(true);
-  const [tab2, setTab2] = useState(false);
-  const [tab3, setTab3] = useState(false);
-
   return (
     <div className="App">
       <Router>
-        <Search showSearch={showSearch} setShowSearch={setShowSearch} />
-        <Header showSearch={showSearch} setShowSearch={setShowSearch} />
+        <Search />
+        <Header />
         <div className="container">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Home setTab1={setTab1} setTab2={setTab2} setTab3={setTab3} />
-              }
-            />
+            <Route path="/" element={<Home />} />
             <Route
               path="/movieDetail/:imdbID/:type"
-              element={<MovieDetail setShowSearch={setShowSearch} />}
+              element={<MovieDetail />}
             />
-            <Route
-              path="/AllMovies"
-              element={
-                <AllMovies
-                  setTab1={setTab1}
-                  setTab2={setTab2}
-                  setTab3={setTab3}
-                />
-              }
-            />
-            <Route
-              path="/TvSeries"
-              element={
-                <TvSeries
-                  setTab1={setTab1}
-                  setTab2={setTab2}
-                  setTab3={setTab3}
-                />
-              }
-            />
+            <Route path="/AllMovies" element={<AllMovies />} />
+            <Route path="/TvSeries" element={<TvSeries />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
-        <Footer
-          tab1={tab1}
-          tab2={tab2}
-          tab3={tab3}
-          setTab1={setTab1}
-          setTab2={setTab2}
-          setTab3={setTab3}
-        />
+        <Footer />
       </Router>
     </div>
   );

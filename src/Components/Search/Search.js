@@ -2,12 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Search.scss";
 import MovieCard from "../MovieCard/MovieCard";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { toggle } from "../../Features/Search/searchSlice";
 
-const Search = ({ showSearch, setShowSearch }) => {
+const Search = () => {
+  const showSearch = useSelector((state) => state.search);
+  const Dispatch = useDispatch();
   const closeHandle = () => {
+    setList();
     document.documentElement.style.overflow = "scroll";
 
-    setShowSearch(false);
+    Dispatch(toggle(false));
   };
 
   const [list, setList] = useState();
@@ -38,7 +44,7 @@ const Search = ({ showSearch, setShowSearch }) => {
   // console.log(props);
   return (
     <>
-      {showSearch ? (
+      {showSearch.searchOverlay.showSearch ? (
         <>
           <div className="search-overlay" id="s-overlay">
             <div className="overlay-content">

@@ -7,7 +7,9 @@ import { useDispatch } from "react-redux";
 
 import { fetchMovies } from "../../Features/Movie/movieSlice";
 
-export default function Home({ setTab1, setTab2, setTab3 }) {
+import { toggleTab } from "../../Features/Footer/footerSlice";
+
+export default function Home() {
   const [page, setPage] = useState(1);
 
   const Dispatch = useDispatch();
@@ -18,9 +20,7 @@ export default function Home({ setTab1, setTab2, setTab3 }) {
   }
 
   useEffect(() => {
-    setTab1(true);
-    setTab2(false);
-    setTab3(false);
+    Dispatch(toggleTab({ tab1: true, tab2: false, tab3: false }));
   }, []);
 
   useEffect(() => {

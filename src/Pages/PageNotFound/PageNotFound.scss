@@ -1,0 +1,9 @@
+.notfound {
+  width: 500px;
+}
+
+@media (max-width: "834px") {
+  .notfound {
+    width: 80%;
+  }
+}

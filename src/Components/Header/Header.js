@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import h_logo from "../../Common/Assets/image/m_logo3.png";
 import "./Header.scss";
+import { useDispatch } from "react-redux";
+import { toggle } from "../../Features/Search/searchSlice";
 
-export default function Header({ showSearch, setShowSearch }) {
+export default function Header() {
+  const Dispatch = useDispatch();
+
   const openSearch = () => {
     document.documentElement.style.overflow = "hidden";
     // document.body.scroll = "no";
-    setShowSearch(true);
+    Dispatch(toggle(true));
   };
 
   return (

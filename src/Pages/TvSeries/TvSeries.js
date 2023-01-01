@@ -6,11 +6,13 @@ import axios from "axios";
 import { fetchTvSeries } from "../../Features/TvSeries/seriesSlice";
 
 import { useSelector } from "react-redux";
+import { toggleTab } from "../../Features/Footer/footerSlice";
+
 import MovieCard from "../../Components/MovieCard/MovieCard";
 import "../Home/Home.scss";
 import "../TvSeries/TvSeries.scss";
 
-export const TvSeries = ({ setTab1, setTab2, setTab3 }) => {
+export const TvSeries = () => {
   const series_list = useSelector((state) => state.tvSeries);
   console.log("Data", series_list);
   const [page, setPage] = useState(1);
@@ -27,9 +29,8 @@ export const TvSeries = ({ setTab1, setTab2, setTab3 }) => {
   }, [page, genres_param]);
 
   useEffect(() => {
-    setTab2(false);
-    setTab1(false);
-    setTab3(true);
+    Dispatch(toggleTab({ tab1: false, tab2: false, tab3: true }));
+
     fetchGenres();
   }, []);
 

@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import Multiselect from "multiselect-react-dropdown";
 
 import { fetchallMovies } from "../../Features/Movie/allMoviesSlice";
+import { toggleTab } from "../../Features/Footer/footerSlice";
 
 import { useSelector } from "react-redux";
 import MovieCard from "../../Components/MovieCard/MovieCard";
@@ -12,7 +13,7 @@ import "../Home/Home.scss";
 import "./AllMovies.scss";
 import axios from "axios";
 
-const AllMovies = ({ setTab1, setTab2, setTab3 }) => {
+const AllMovies = () => {
   const allmovies_list = useSelector((state) => state.allmovies);
   const [movie_genres, setMovie_genres] = useState([]);
   const [genres_param, setGenre_param] = useState("");
@@ -35,9 +36,7 @@ const AllMovies = ({ setTab1, setTab2, setTab3 }) => {
   }, [page, genres_param]);
 
   useEffect(() => {
-    setTab2(true);
-    setTab1(false);
-    setTab3(false);
+    Dispatch(toggleTab({ tab1: false, tab2: true, tab3: false }));
     fetchGenres();
   }, []);
 

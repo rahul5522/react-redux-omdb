@@ -8,12 +8,15 @@ import flipmovie from "../../Common/Assets/image/flip_movie.png";
 import series from "../../Common/Assets/image/series2.png";
 import flipseries from "../../Common/Assets/image/flip_series.png";
 
-const Footer = ({ tab1, tab2, tab3 }) => {
+import { useSelector } from "react-redux";
+
+const Footer = () => {
+  const tabToggle = useSelector((state) => state.footer);
   return (
     <div className="footer">
       <Link to="/">
         <button className="tab">
-          {tab1 ? (
+          {tabToggle.tab.tab1 ? (
             <>
               <img src={fliptrend} style={{ width: "20px" }} />
               <p className="footer_menu" style={{ fontWeight: "bold" }}>
@@ -30,7 +33,7 @@ const Footer = ({ tab1, tab2, tab3 }) => {
       </Link>
       <Link to="/AllMovies">
         <button className="tab">
-          {tab2 ? (
+          {tabToggle.tab.tab2 ? (
             <>
               <img src={flipmovie} style={{ width: "20px" }} />
               <p className="footer_menu" style={{ fontWeight: "bold" }}>
@@ -47,7 +50,7 @@ const Footer = ({ tab1, tab2, tab3 }) => {
       </Link>
       <Link to="/TvSeries">
         <button className="tab">
-          {tab3 ? (
+          {tabToggle.tab.tab3 ? (
             <>
               <img src={flipseries} style={{ width: "20px" }} />
               <p className="footer_menu" style={{ fontWeight: "bold" }}>
